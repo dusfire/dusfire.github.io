@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Tetyana Zaporozhets</title>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: #0c1222;
+        --background-gradient: linear-gradient(to bottom, #0c1222, #101a30);
+        --primary: #ff1f8f;
+        --secondary: #5564eb;
+        --text: #ffffff;
+        --text-secondary: #a0a8c0;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--background-gradient);
+        color: var(--text);
+        line-height: 1.6;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+        text-align: center;
+        z-index: 10;
+      }
+
+      .error-container {
+        padding: 60px 40px;
+        background: rgba(13, 23, 45, 0.7);
+        border: 1px solid rgba(50, 61, 89, 0.5);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        max-width: 600px;
+        margin: 0 auto;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .error-code {
+        font-size: 120px;
+        font-weight: 700;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+        margin-bottom: 20px;
+        text-shadow: 0 5px 15px rgba(255, 31, 143, 0.3);
+        position: relative;
+      }
+
+      .error-title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--text);
+      }
+
+      .error-text {
+        font-size: 16px;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-home {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: transparent;
+        color: var(--text);
+        padding: 14px 30px;
+        border: 1px solid var(--primary);
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .btn-home:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 31, 143, 0.3);
+      }
+
+      .bg-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .shape-1 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 31, 143, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        top: 20%;
+        left: 15%;
+        filter: blur(50px);
+        animation: float 10s ease-in-out infinite alternate;
+      }
+
+      .shape-2 {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(85, 100, 235, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        bottom: 10%;
+        right: 10%;
+        filter: blur(60px);
+        animation: float 15s ease-in-out infinite alternate-reverse;
+      }
+
+      .shape-3 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 31, 143, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        bottom: 30%;
+        left: 10%;
+        filter: blur(40px);
+        animation: float 12s ease-in-out infinite alternate;
+      }
+
+      .shape-4 {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(
+          circle,
+          rgba(85, 100, 235, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        top: 15%;
+        right: 20%;
+        filter: blur(45px);
+        animation: float 14s ease-in-out infinite alternate-reverse;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) scale(1);
+        }
+        100% {
+          transform: translateY(-30px) scale(1.05);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .error-code {
+          font-size: 100px;
+        }
+
+        .error-title {
+          font-size: 24px;
+        }
+
+        .error-container {
+          padding: 40px 30px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .error-code {
+          font-size: 80px;
+        }
+
+        .error-title {
+          font-size: 20px;
+        }
+
+        .error-text {
+          font-size: 14px;
+        }
+
+        .error-container {
+          padding: 30px 20px;
+        }
+
+        .btn-home {
+          padding: 12px 24px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-shapes">
+      <div class="shape-1"></div>
+      <div class="shape-2"></div>
+      <div class="shape-3"></div>
+      <div class="shape-4"></div>
+    </div>
+
+    <div class="container">
+      <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-text">
+          The page you are looking for might have been removed, had its name
+          changed, or is temporarily unavailable.
+        </p>
+        <a href="https://dusfire.github.io/" class="btn-home">
+          <i class="bx bx-home"></i> Back to Home
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Add light mode functionality to match main site
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+
+        // Add light mode styles
+        const styleElement = document.createElement("style");
+        styleElement.textContent = `
+                body.light-mode {
+                    --background: #f8f9fc;
+                    --background-gradient: linear-gradient(to bottom, #f8f9fc, #edf0f9);
+                    --text: #0c1222;
+                    --text-secondary: #4a5568;
+                }
+                
+                body.light-mode .error-container {
+                    background: rgba(255, 255, 255, 0.8);
+                    border-color: rgba(200, 210, 230, 0.5);
+                }
+            `;
+        document.head.appendChild(styleElement);
+      }
+    </script>
+  </body>
+</html>
